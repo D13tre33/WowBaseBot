@@ -113,7 +113,7 @@ async def base_quick_action(callback_query: CallbackQuery, state: FSMContext, ca
             await user_menu_callback_query(callback_query, state)
         case "disable_common_user_mode":
             await Storage.admins.set_common_user_mode(callback_query.from_user.id, False)
-            if callback_query.from_user.id == config.tg_bot.su_ids:
+            if callback_query.from_user.id in config.tg_bot.su_ids:
                 await su_main_menu(callback_query, state)
             elif await Storage.admins.check_id(callback_query.from_user.id):
                 await admin_main_menu(callback_query, state)
