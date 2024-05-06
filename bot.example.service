@@ -1,0 +1,14 @@
+[Unit]
+Description=ManagerWowTestBot
+After=network.target
+
+[Service]
+EnvironmentFile=/path/to/.env
+ExecStart=/usr/bin/python3 /path/to/bot.py
+KillMode=process
+Restart=on-failure
+RestartSec=5
+User=username
+
+[Install]
+WantedBy=multi-user.target
