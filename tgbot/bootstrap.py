@@ -125,6 +125,9 @@ async def bootstrap(config: Config, dp: Dispatcher, bot: Bot):
 
     await register_forms()
 
+    await Storage.admins.set_env_ids(config.tg_bot.admin_ids)
+    await Storage.su.set_ids(config.tg_bot.su_ids)
+
     admin_ids = await Storage.admins.get_ids()
 
     scheduler = await Storage.scheduler.get()
