@@ -14,7 +14,7 @@ Install Redis.
 sudo apt install redis
 ```
 
-Install Redis for MacOS using [Brew](https://brew.sh/).
+Install Redis for MacOS or Linux using [Brew](https://brew.sh/).
 
 ```shell
 brew install redis
